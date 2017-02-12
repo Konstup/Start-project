@@ -1,3 +1,5 @@
+global.hostname = "localhost";
+
 var gulp 			= require('gulp'),
 sass 					= require('gulp-sass'),
 browserSync 	= require('browser-sync'),
@@ -86,3 +88,5 @@ gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function(){
 	var BuildHtml = gulp.src('app/*.html')
 		.pipe(gulp.dest('dist'));
 	});
+
+gulp.task('default', ['browser-sync', 'watch']);
