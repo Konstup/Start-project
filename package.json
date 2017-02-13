@@ -9,6 +9,7 @@
   "author": "KonstTs",
   "license": "ISC",
   "devDependencies": {
+    "bourbon": "^4.3.2",
     "browser-sync": "^2.18.7",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -20,7 +21,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglifyjs": "^0.6.2",
-    "imagemin-pngquant": "^5.0.0"
+    "imagemin-pngquant": "^5.0.0",
+    "node-bourbon": "^4.2.8"
   },
   "dependencies": {
     "gulp": "^3.9.1"

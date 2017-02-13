@@ -15,6 +15,9 @@ autoprefixer 	= require('gulp-autoprefixer');
 
 gulp.task('sass',function() {
 	return gulp.src('app/sass/*.sass')
+	.pipe(sass({
+		includePaths: require('node-bourbon').includePaths
+	}).on('error', sass.logError))
 	.pipe(sass())
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
 	.pipe(gulp.dest('app/css'))
@@ -23,8 +26,10 @@ gulp.task('sass',function() {
 
 gulp.task('scripts', function(){
 	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+		'./app/libs/modernizr/modernizr.js',
+		'./app/libs/jquery/jquery-1.11.2.min.js',
+		'./app/libs/waypoints/waypoints.min.js',
+		'./app/libs/animate/animate-css.js',
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
